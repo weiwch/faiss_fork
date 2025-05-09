@@ -163,6 +163,7 @@ set(FAISS_HEADERS
   impl/LocalSearchQuantizer.h
   impl/ProductAdditiveQuantizer.h
   impl/LookupTableScaler.h
+  impl/maybe_owned_vector.h
   impl/NNDescent.h
   impl/NSG.h
   impl/PolysemousTraining.h
@@ -184,6 +185,7 @@ set(FAISS_HEADERS
   impl/pq4_fast_scan.h
   impl/residual_quantizer_encode_steps.h
   impl/simd_result_handlers.h
+  impl/zerocopy_io.h
   impl/code_distance/code_distance.h
   impl/code_distance/code_distance-generic.h
   impl/code_distance/code_distance-avx2.h

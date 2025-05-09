@@ -8,7 +8,7 @@
 #include <stdio.h>
 #include <string.h>
 
-#ifdef __linux__
+#if defined(__linux__) || defined(__FreeBSD__)
 
 #include <fcntl.h>
 #include <sys/mman.h>
@@ -30,7 +30,7 @@
 
 namespace faiss {
 
-#ifdef __linux__
+#if defined(__linux__) || defined(__FreeBSD__)
 
 struct MmappedFileMappingOwner::PImpl {
     void* ptr = nullptr;
@@ -227,12 +227,15 @@ struct MmappedFileMappingOwner::PImpl {
 #else
 
 struct MmappedFileMappingOwner::PImpl {
-    PImpl(FILE* f) {
-        FAISS_THROW_FMT("Not implemented");
+    void* ptr = nullptr;
+    size_t ptr_size = 0;
+
+    PImpl(const std::string& filename) {
+        FAISS_THROW_MSG("Not implemented");
     }
 
-    ~PImpl() {
-        FAISS_THROW_FMT("Not implemented");
+    PImpl(FILE* f) {
+        FAISS_THROW_MSG("Not implemented");
     }
 };
 

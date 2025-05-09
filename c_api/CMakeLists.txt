@@ -22,6 +22,7 @@ set(FAISS_C_SRC
   IndexReplicas_c.cpp
   Index_c.cpp
   IndexBinary_c.cpp
+  IndexBinaryIVF_c.cpp
   IndexScalarQuantizer_c.cpp
   MetaIndexes_c.cpp
   clone_index_c.cpp
@@ -29,6 +30,7 @@ set(FAISS_C_SRC
   index_factory_c.cpp
   index_io_c.cpp
   impl/AuxIndexStructures_c.cpp
+  impl/io_c.cpp
   utils/distances_c.cpp
   utils/utils_c.cpp
 )
